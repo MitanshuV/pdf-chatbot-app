@@ -26,8 +26,7 @@ This is a PDF chatbot application built using Vite.js, Flask, Firebase, and Gemi
 
 2. Install Dependencies
     ```npm install
-    npm install 
-
+    npm install
 3. Configure Tailwind CSS Follow the Tailwind CSS documentation for setup.
 
 4. Run the Frontend using npm run dev
