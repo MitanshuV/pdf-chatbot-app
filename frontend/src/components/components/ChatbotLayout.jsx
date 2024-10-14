@@ -13,7 +13,7 @@ const ChatbotLayout = () => {
       {/* Main Content */}
       <main className="flex-grow flex justify-center items-center">
   {/* Centered Container for PDF Upload and Viewer */}
-  <div className="w-full max-w-[500px] h-[70vh] bg-white p-4 shadow-lg rounded-lg overflow-auto">
+  <div className="w-4/5 h-[70vh] bg-white p-4 shadow-lg rounded-lg overflow-auto">
     <PdfUpload />
     <PdfViewer />
   </div>
