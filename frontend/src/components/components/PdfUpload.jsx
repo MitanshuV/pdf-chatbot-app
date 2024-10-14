@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { usePdfContext } from '@/context/PdfContext'; // Adjust the import path as necessary
+import { usePdfContext } from "@/context/PdfContext"; // Adjust the import path as necessary
 
 const PdfUpload = () => {
   const { uploadPdf } = usePdfContext(); // Get uploadPdf from context
