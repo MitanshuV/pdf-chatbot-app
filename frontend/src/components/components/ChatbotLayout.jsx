@@ -12,13 +12,12 @@ const ChatbotLayout = () => {
 
       {/* Main Content */}
       <main className="flex-grow flex justify-center items-center">
-  {/* Centered Container for PDF Upload and Viewer */}
-  <div className="w-4/5 h-[70vh] bg-white p-4 shadow-lg rounded-lg overflow-auto">
-    <PdfUpload />
-    <PdfViewer />
-  </div>
-</main>
-
+        {/* Centered Container for PDF Upload and Viewer */}
+        <div className="w-4/5 h-[50vh] bg-white p-4 shadow-lg rounded-lg overflow-auto">
+          <PdfUpload />
+          <PdfViewer />
+        </div>
+      </main>
 
       {/* Footer */}
       <footer className="bg-white py-4 px-8 text-center shadow-md">
