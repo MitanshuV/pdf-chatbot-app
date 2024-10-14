@@ -1,8 +1,14 @@
-import React from "react";
+import React, { useState } from "react";
 import PdfUpload from "@/components/components/PdfUpload"; // Adjust the import path as necessary
 import PdfViewer from "@/components/components/PdfViewer"; // Adjust the import path as necessary
 
 const ChatbotLayout = () => {
+  const [pdfUploaded, setPdfUploaded] = useState(false);
+
+  const handleUpload = () => {
+    setPdfUploaded(true); // Update the state when a PDF is uploaded
+  };
+
   return (
     <div className="min-h-screen flex flex-col bg-gray-100">
       {/* Header */}
@@ -13,9 +19,9 @@ const ChatbotLayout = () => {
       {/* Main Content */}
       <main className="flex-grow flex justify-center items-center">
         {/* Centered Container for PDF Upload and Viewer */}
-        <div className="w-4/5 h-[50vh] bg-white p-4 shadow-lg rounded-lg overflow-auto">
-          <PdfUpload />
-          <PdfViewer />
+        <div className={`w-4/5 ${pdfUploaded ? 'h-[70vh]' : 'h-[25vh]'} bg-white p-4 shadow-lg rounded-lg overflow-auto`}>
+          <PdfUpload onUpload={handleUpload} />
+          <PdfViewer height={pdfUploaded ? '100%' : '100%'} />
         </div>
       </main>
 

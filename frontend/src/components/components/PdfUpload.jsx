@@ -1,10 +1,10 @@
-import React, { useState } from 'react';
-import { Button } from '@/components/ui/button';
+import React, { useContext } from "react";
+import { Button } from "@/components/ui/button";
 import { usePdfContext } from "@/context/PdfContext"; // Adjust the import path as necessary
 
-const PdfUpload = () => {
-  const { uploadPdf } = usePdfContext(); // Get uploadPdf from context
-  const [selectedFile, setSelectedFile] = useState(null);
+const PdfUpload = ({ onUpload }) => { // Accept onUpload as a prop
+  const { uploadPdf } = usePdfContext(); // Use the context to get the upload function
+  const [selectedFile, setSelectedFile] = React.useState(null);
 
   const handleFileChange = (e) => {
     setSelectedFile(e.target.files[0]);
@@ -12,7 +12,8 @@ const PdfUpload = () => {
 
   const handleUpload = () => {
     if (selectedFile) {
-      uploadPdf(selectedFile); // Call uploadPdf from context
+      uploadPdf(selectedFile); // Call uploadPdf to set the file in context
+      onUpload(); // Notify parent component that a file has been uploaded
     }
   };
 
