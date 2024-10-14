@@ -1,13 +1,15 @@
 import React from "react";
+import { Route, Routes } from "react-router-dom";
+import { PdfProvider } from "@/context/PdfContext";
+import ChatbotLayout from "@/components/components/ChatbotLayout";
 
 const App = () => {
-  console.log(import.meta.env.VITE_API_KEY);
-
   return (
-    <div>
-      App
-      <h1>this is the key: {import.meta.env.VITE_API_KEY}</h1>
-    </div>
+    <PdfProvider>
+      <Routes>
+        <Route path="/" element={<ChatbotLayout />} />
+      </Routes>
+    </PdfProvider>
   );
 };
 
