@@ -5,11 +5,11 @@ const PdfViewer = () => {
   const { pdfFile } = usePdfContext(); 
 
   return (
-    <div className="mt-4">
+    <div className="w-full h-full flex-grow">
       {pdfFile ? (
         <iframe
           src={URL.createObjectURL(pdfFile)} 
-          className="w-full h-[400px]" 
+          className="w-full h-full" 
           title="PDF Viewer"
         >
           This browser does not support PDFs. Please download the PDF to view it:
