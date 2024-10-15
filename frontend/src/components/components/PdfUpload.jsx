@@ -1,7 +1,9 @@
 import React, { useState } from "react";
-import { Button } from "@/components/ui/button"; // Adjust the import path as necessary
+import { Button } from "@/components/ui/button";
+import { usePdfContext } from "@/context/PdfContext";
 
-const PdfUpload = ({ onUpload }) => {
+const PdfUpload = () => {
+  const { uploadPdf } = usePdfContext();
   const [selectedFile, setSelectedFile] = useState(null);
 
   const handleFileChange = (e) => {
@@ -10,7 +12,7 @@ const PdfUpload = ({ onUpload }) => {
 
   const handleUpload = () => {
     if (selectedFile) {
-      onUpload(selectedFile); // Call the passed callback with the uploaded file
+      uploadPdf(selectedFile);
     }
   };
 
@@ -23,7 +25,10 @@ const PdfUpload = ({ onUpload }) => {
         className="w-full p-2 border border-gray-300 rounded-md"
       />
       {selectedFile && (
-        <Button onClick={handleUpload} className="w-full bg-blue-500 hover:bg-blue-600">
+        <Button
+          onClick={handleUpload}
+          className="w-full bg-blue-500 hover:bg-blue-600"
+        >
           Upload PDF
         </Button>
       )}
